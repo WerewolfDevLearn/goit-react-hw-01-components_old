@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import ProfileStatisticItem from './ProfileStatisticItem';
 import ProfileStyle from './Profile.module.css';
 
-import arrOfObjects from '../../utils/objectDes';
+import arrOfObjects from '../../utils/objectToArr';
 
 function ProfileStatistic({ stats }) {
   const arrOfStats = arrOfObjects(stats);
