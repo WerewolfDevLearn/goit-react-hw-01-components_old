@@ -6,7 +6,7 @@ import arrOfObjects from '../../utils/objectDes';
 
 function ProfileStatistic({ stats }) {
   const arrOfStats = arrOfObjects(stats);
-
+  console.log(arrOfStats);
   return (
     <ul className={ProfileStyle.stats}>
       {arrOfStats.map(stat => (

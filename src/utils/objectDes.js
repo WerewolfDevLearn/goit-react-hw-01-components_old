@@ -1,12 +1,17 @@
 import { v4 as uuid } from 'uuid';
 export default function objectDisturction(object) {
-  const arr = Object.entries(object);
-  const arrOfObj = arr.map(element => {
-    const obj = { label: '', number: 0 };
-    obj.label = element[0];
-    obj.number = element[1];
+  const arrOfkeys = Object.keys(object);
+  const arrOfValues = Object.values(object);
+  const arrOfObj = arrOfkeys.map((key, idx) => {
+    console.log(key);
+    console.log(idx);
+    const obj = {};
+    obj.label = key;
+    obj.number = arrOfValues[idx];
     obj.id = uuid();
+    console.log(obj);
     return obj;
   });
+  console.log(arrOfObj);
   return arrOfObj;
 }
