@@ -1,7 +1,6 @@
 import Proptypes from 'prop-types';
-import StatisticItem from './StatisticItem';
+import StatisticItem from './StatisticItem/StatisticItem';
 import StatisticsStyles from './Statistic.module.css';
-import colorGenerator from '../../utils/colorGenerator';
 
 function Statistics({ title, stats }) {
   return (
@@ -9,13 +8,11 @@ function Statistics({ title, stats }) {
       {title && <h2 className={StatisticsStyles.title}>{title}</h2>}
       <ul className={StatisticsStyles.statList}>
         {stats.map(stat => (
-          <li
-            className={StatisticsStyles.item}
+          <StatisticItem
+            label={stat.label}
+            percentage={stat.percentage}
             key={stat.id}
-            style={{ backgroundColor: colorGenerator() }}
-          >
-            <StatisticItem label={stat.label} percentage={stat.percentage} />
-          </li>
+          />
         ))}
       </ul>
     </section>

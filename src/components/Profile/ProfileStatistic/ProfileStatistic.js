@@ -1,18 +1,20 @@
 import PropTypes from 'prop-types';
-import ProfileStatisticItem from './ProfileStatisticItem';
-import ProfileStyle from './Profile.module.css';
+import ProfileStatisticItem from './PorfileStatisticItem/ProfileStatisticItem';
+import ProfileStyle from '../Profile.module.css';
 
-import arrOfObjects from '../../utils/objectToArr';
+import arrOfObjects from '../../../utils/objectToArr';
 
 function ProfileStatistic({ stats }) {
   const arrOfStats = arrOfObjects(stats);
-  console.log(arrOfStats);
+
   return (
     <ul className={ProfileStyle.stats}>
       {arrOfStats.map(stat => (
-        <li key={stat.id}>
-          <ProfileStatisticItem label={stat.label} number={stat.number} />
-        </li>
+        <ProfileStatisticItem
+          label={stat.label}
+          number={stat.number}
+          key={stat.id}
+        />
       ))}
     </ul>
   );

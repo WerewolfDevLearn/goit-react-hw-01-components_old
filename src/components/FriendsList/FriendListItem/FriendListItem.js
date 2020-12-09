@@ -1,15 +1,14 @@
 import Proptypes from 'prop-types';
-import defaultImg from '../../images/avatar-1577909_1280.png';
+import defaultImg from '../../../images/avatar-1577909_1280.png';
 import FriendListItemStyle from './FriendListItem.module.css';
 
-function FriendListItem({ avatar, name, isOnline }) {
-  const finalStyle =
-    FriendListItemStyle.status +
-    ' ' +
-    (isOnline ? FriendListItemStyle.onLine : FriendListItemStyle.offLine);
+function FriendListItem({ avatar, name, isOnline, friendId }) {
+  const finalStyle = isOnline
+    ? FriendListItemStyle.onLine
+    : FriendListItemStyle.offLine;
 
   return (
-    <>
+    <li className={FriendListItemStyle.item}>
       <span className={finalStyle}></span>
       <img
         className={FriendListItemStyle.avatar}
@@ -18,7 +17,7 @@ function FriendListItem({ avatar, name, isOnline }) {
         width="48"
       />
       <p className={FriendListItemStyle.name}>{name}</p>
-    </>
+    </li>
   );
 }
 

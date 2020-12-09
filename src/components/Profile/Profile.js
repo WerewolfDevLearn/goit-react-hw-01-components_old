@@ -1,6 +1,6 @@
 import Proptypes from 'prop-types';
 
-import ProfileStatistic from './ProfileStatistic';
+import ProfileStatistic from './ProfileStatistic/ProfileStatistic';
 import ProfileStyle from './Profile.module.css';
 import defaultPrflAvatar from '../../images/avatar-1577909_1280.png';
 
